@@ -34,19 +34,22 @@
             justify-content: center;
         }
         #canvasContainer {
-             display: flex;
-             justify-content: center;
-             /* A3縦向きのサイズを指定 */
-             width: 297mm;
-             height: 420mm;
+            display: flex;
+            justify-content: center;
+            /* A3縦向きのサイズを指定 */
+            width: 297mm;
+            height: 420mm;
+            max-width: 100%; /* 最大幅を100%に設定 */
         }
 
         canvas {
             background-color: white;
             cursor: crosshair;
-             /* canvasのサイズをcontainerに合わせる */
+            /* canvasのサイズをcontainerに合わせる */
             width: 100%;
             height: 100%;
+            max-width: 100%; /* 最大幅を100%に設定 */
+            height: auto;      /* 高さを自動に設定 */
         }
 
         .button {
@@ -70,6 +73,8 @@
         #colorPalette {
             display: flex;
             gap: 4px;
+            flex-wrap: wrap;
+            justify-content: center; /* パレットを中央に配置 */
         }
         .colorButton {
                 width: 24px;
@@ -113,6 +118,10 @@
             }
             canvas {
                 max-width: 100%;
+                height: auto;
+            }
+            #canvasContainer {
+                width: 100%; /* 親要素の幅に合わせる */
                 height: auto;
             }
         }
